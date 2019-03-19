@@ -16,3 +16,26 @@ npm start
 
  - The EUM snippet is added to `public/index.html`.
  - The pages are defined in `src/App.js` by making use of a custom history object.
+
+## TLDR
+
+```javascript
+const customHistory = createBrowserHistory();
+
+customHistory.listen(location => {
+  console.log('Set page to', location.pathname);
+
+  // eslint-disable-next-line no-undef
+  ineum('page', location.pathname);
+
+  // Note that the above can result in many useless pages when you are making use of path parameters.
+  // In these cases you will have to define the page via different means, e.g. by creating a custom
+  // Route component which accepts a 'pageName' property.
+});
+
+…
+
+<Router history={customHistory}>
+ …
+</Router>
+```
