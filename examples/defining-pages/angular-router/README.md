@@ -1,4 +1,4 @@
-# React-Router Example
+# Angular-Router Example
 
 This example shows how to [define pages](https://docs.instana.io/products/website_monitoring/api/#page) for websites
 making use of [Angular](https://angular.io) with [Angular's router](https://angular.io/guide/router).
