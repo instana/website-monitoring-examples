@@ -12,6 +12,7 @@ git clone https://github.com/instana/website-monitoring-examples.git
 cd website-monitoring-examples/examples/page-load-backend-correlation/node-js-express-js-handlebars
 npm install
 npm start
+open http://localhost:3000
 ```
 
 ## Where Are The Important Parts?
