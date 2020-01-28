@@ -12,6 +12,8 @@ In this example we have two involved servers:
 The browser will load the files from the app server upon startup and then communicate
 with the API server. This communication crosses into a separate origin.
 
+![End result within the page load view of Instana](./screenshot.png)
+
 ## How To Try This Example?
 
 ### Cloning the repository
