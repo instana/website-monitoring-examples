@@ -1,0 +1,66 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Example App</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <script>
+    (function(c,e,f,k,g,h,b,a,d){c[g]||(c[g]=h,b=c[h]=function(){
+    b.q.push(arguments)},b.q=[],b.l=1*new Date,a=e.createElement(f),a.async=1,
+    a.src=k,a.setAttribute("crossorigin", "anonymous"),d=e.getElementsByTagName(f)[0],
+    d.parentNode.insertBefore(a,d))})(window,document,"script",
+    "https://eum.instana.io/eum.min.js","InstanaEumObject","ineum");
+    ineum('reportingUrl', 'https://eum-red-saas.instana.io');
+    ineum('key', '1g382IC9TTG0eAaVUULbMw');
+    ineum('whitelistedOrigins', [/^http:\/\/127\.0\.0\.1:6200.*/i]);
+
+    // You can choose to disable capturing for socket.io calls. This is recommended as the
+    // frequency of calls vs. value of capturing of long-polling data is highly questionable.
+    // Furthermore tracing data is only collected for the long-polling data transmission strategy.
+    // WebSocket communication is not traced.
+    // ineum('ignoreUrls', [/.*\/socket\.io\/.*/]);
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>
+      Cross-Origin Fetch Requests
+    </h1>
+
+    <button type="button" class="btn btn-primary cross-origin-fetch" data-method="get">
+      GET
+    </button>
+
+    <button type="button" class="btn btn-primary cross-origin-fetch" data-method="post">
+      POST
+    </button>
+
+    <button type="button" class="btn btn-primary cross-origin-fetch" data-method="put">
+      PUT
+    </button>
+
+    <button type="button" class="btn btn-primary cross-origin-fetch" data-method="delete">
+      DELETE
+    </button>
+
+    <h1>
+      Cross-Origin WebSocket Messages
+    </h1>
+
+    <h2>Send New Message</h2>
+    <form>
+      <textarea id="msg" name="msg" class="form-control"></textarea>
+      <input type="submit" class="btn btn-primary" value="Echo">
+    </form>
+
+    <h2>Messages Received from the server</h2>
+    <ul></ul>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
