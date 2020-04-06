@@ -25,6 +25,18 @@ reported to Instana, this would not fix the security issues they face, because
 all other third-parties would continue to receive the secrets! Instead we
 choose an educational approach through this example.
 
+## What to do
+
+When you are storing secrets in the document URL for a production website, you
+should carefully consider whether you might have leaked sensitive data. The
+next steps then strongly depend on the kind of leaked data and your policies.
+We generally recommend that engineering departments follow this non-extensive
+list of steps as a starting point.
+
+ 1. Read through Mozilla's page about the [Referrer problem](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns).
+ 2. Try to deploy a `Referrer-Policy: no-referrer` header as quickly as possible.
+ 3. Implement an alternative secret storage approach.
+
 ## Information leaked to third-parties for fetch requests
 
 ![Fetch Requests](screenshots/fetch-request.png)
