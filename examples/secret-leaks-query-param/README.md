@@ -34,8 +34,9 @@ We generally recommend that engineering departments follow this non-extensive
 list of steps as a starting point.
 
  1. Read through Mozilla's page about the [Referrer problem](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns).
- 2. Try to deploy a `Referrer-Policy: no-referrer` header as quickly as possible.
- 3. Implement an alternative secret storage approach.
+ 2. Evaluate the security impact and consult with management/security if necessary.
+ 3. Try to deploy a `Referrer-Policy: no-referrer` header as quickly as possible.
+ 4. Implement an alternative secret storage approach.
 
 ## Information leaked to third-parties for fetch requests
 
